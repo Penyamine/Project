@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>agent_work</title>
+  <link rel="stylesheet" href="../static/agentHomeStyle.css">
+
+</head>
+<body>
+  <div class="navbar">
+    <a href="/">Home</a>
+    <a href="/logout">Logout</a>
+  </div>
+  
+  <h2>Issue Tracker</h2>
+  <table>
+  <thead>
+    <tr>
+      <th>User ID</th>
+      <th>Uploaded Image</th>
+      <th>Issuer Name</th>
+      <th>Address</th>
+      <th>Pincode</th>
+      <th>Problem Description</th>
+      <th>Agent Work</th>
+    </tr>
+  </thead>
+     <tbody >
+    {% for row in data %}
+      <tr>
+        <td>{{ row[0] }}</td>
+        <td><img src="{{row[1]}} " width="200" height="100"></td>
+        <td>{{ row[2] }}</td>
+        <td>{{ row[3]}}</td>
+        <td>{{ row[4]}}</td>
+        <td>{{row[5]}}</td>
+        <td>
+         <form action="/assignWork" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="userId" value="{{ row[0] }}">
+           <select  name="status" required>
+          <option value="Planning">Planning</option>
+          <option value="Progress">Progress</option>
+          <option value="Completed">Completed</option>
+          </select>
+          <input type="file" id="upload" name="image" accept="image/* " onchange="loadFile(event)">
+             <p ><img id="output" width="200" height="100"></p>
+
+          <button class="Assign" type="submit" >Assign</button>
+             {{msg}}
+          </form>
+            <script>
+                var loadFile=function(event)
+                {
+                    var image=document.getElementById('output');
+                    image.src=URL.createObjectURL(event.target.files[0])
+                };
+            </script>
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Login Form</title>
+    <link rel="stylesheet" href="../static/adminLoginStyle.css">
+</head>
+
+<body>
+
+<div class="form-container">
+    <h2>Admin Login</h2>
+    <form action="/adminHome" method="POST">
+      <div class="form-group">
+        <label for="email">Username:</label>
+        <input type="text" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Login" class="btn animate__animated animate__fadeInUp">
+      </div>
+    </form>
+    <div class="registration-link">
+      Don't have an account? <a href="/adminRegister">Register</a>
+    </div>
+    <div>
+        <h3>{{msg}}</h3>
+    </div>
+  </div>
+</body>
+</html>

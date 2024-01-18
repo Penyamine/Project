@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Post_Complaints</title>
+  <h1 style="color: #333;text-align: center">POST Complaints</h1>
+    <link rel="stylesheet" href="../static/postComplaintsStyle.css">
+</head>
+<body>
+  <div class="navigation">
+    <ul>
+      <li><a href="/home">Home</a></li>
+      <li><a href="/viewComplaints">View Complaints</a></li>
+      <li style="float: right;"><a href="/logout">Logout</a></li>
+    </ul>
+  </div>
+  
+  <div class="complaint-form">
+    <form action="/postComplaints" method="post" enctype="multipart/form-data">
+      <label for="upload">Upload Photo:</label>
+      <input type="file" id="upload" name="image" accept="image/* " onchange="loadFile(event)">
+      <p ><img id="output" width="600"></p>
+      <br>
+      <br>
+      <label for="description">Problem Description:</label>
+      <textarea id="description" name="description" rows="4"></textarea><br>
+      
+      <label for="address">Address:</label>
+      <textarea id="address" name="address" rows="2"></textarea><br><br>
+      
+      <label for="pincode">Pincode:</label>
+      <input type="text" id="pincode" name="pincode"><br><br>
+      
+<!--      <label for="state">State:</label>
+      <select id="state" name="state">
+        <option value="Andhra Pradesh">Andhra Pradesh</option>
+        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+        <option value="Assam">Assam</option>
+        <option value="Bihar">Bihar</option>
+        Add more options for other states
+      </select><br><br>-->
+      <h3>{{msg}}</h3>
+
+      <button type="submit" >Submit</button>
+    </form>
+    <script>
+      var loadFile=function(event)
+      {
+      var image=document.getElementById('output');
+      image.src=URL.createObjectURL(event.target.files[0])
+      };
+    </script>
+  </div>
+</body>
+</html>

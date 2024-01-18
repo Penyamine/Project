@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>View Complaints</title>
+  <h1 style="color: #333;text-align: center">VIEW Complaints</h1>
+    <link rel="stylesheet" href="../static/viewComplaintsStyle.css">
+</head>
+<body>
+  <div class="navbar">
+    <a href="home.html">Home</a>
+    <a href="post_complaints.html">Post Complaints</a>
+    <a href="logout.html">Logout</a>
+  </div>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Upload Photo</th>
+      <th>Work Status</th>
+      <th>Image After Completion of Work</th>
+      <th>Problem Description</th>
+      <th>Address</th>
+      <th>Pincode</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for row in data %}
+      <tr>
+        <td><img src="{{ row[0] }}" width="200" height="100"></td>
+        <td> {{ row[1] }}</td>
+        <td><img src="{{row[2]}} " width="200" height="100"></td>
+        <td>{{ row[3] }}</td>
+        <td>{{ row[4] }}</td>
+        <td>{{ row[5] }}</td>
+      </tr>
+    {% endfor %}
+
+    </tbody>
+
+    <!-- Add more rows as needed -->
+  </table>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>login</title>
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/loginStyle.css">
+
+</head>
+<body>
+
+    <header class="header">
+        <h2 class="logo">Compalint Register System</h2>
+        <nav class="nav-items">    
+            <a href="/">Home</a>
+            
+        </nav>
+                
+    </header>
+    
+    <form class ="form-container" method="POST">
+        
+        <h3>Login</h3>
+        <label >Username</label>
+        <input type="text" placeholder="Email or Phone" name="email">
+
+        <label >Password</label>
+        <input type="password" placeholder="Password" name="password">
+
+        <button>Log In</button>
+
+        <a href="/register">Are u Not registered ? Register</a>
+
+        <h5>{{msg}}</h5>
+
+    </form>
+</body>
+</html>

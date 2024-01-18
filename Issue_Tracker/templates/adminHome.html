@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Complaint Management System</title>
+  <h1 style="color: #333;text-align: center">Agent Assignment</h1>
+    <link rel="stylesheet" href="../static/adminHomeStyle.css">
+</head>
+<body >
+  <div class="navbar">
+    <a href="/">Home</a>
+    <a href="/logout">Logout</a>
+  </div>
+  <h2>Complaint Management System</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>Ticket Id</th>
+      <th>Username</th>
+      <th>Uploaded Image</th>
+      <th>Description</th>
+      <th>Progress</th>
+      <th>Image of Work Completion</th>
+      <th>Assign</th>
+    </tr>
+    </thead>
+     <tbody >
+    {% for row in data %}
+      <tr>
+        <td>{{ row[0] }}</td>
+        <td>{{row[1]}}</td>
+        <td><img src="{{row[2]}} " width="200" height="100"></td>
+        <td>{{row[3]}}</td>
+        <td>{{row[4]}}</td>
+        <td><img src="{{row[5]}} " width="200" height="100"></td>
+        <td>
+         <form action="/assign-agent" method="POST">
+          <input type="hidden" name="userId" value="{{ row[0] }}">
+  <!--        <input type="hidden" name="roleId"  >  -->
+          <select  name="roleId" required>
+          <option value="Electrician">Electrician</option>
+          <option value="Plumber">Plumber</option>
+          </select>
+          <button class="Assign" type="submit" value="{{ roleId }}">Assign</button>
+          </form>
+        </td>
+      </tr>
+    {% endfor %}
+
+    </tbody>
+  </table>
+</body>
+</html>

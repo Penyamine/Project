@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Agent Login</title>
+  <link rel="stylesheet" href="../static/agentLoginStyle.css">
+</head>
+<body>
+  <div class="form-container">
+    <h2>Agent Login</h2>
+    <form action="/agentHome" method="POST">
+      <div class="form-group">
+        <label for="email">Username:</label>
+        <input type="text" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Login" class="btn">
+      </div>
+    </form>
+    <div class="registration-link">
+      Don't have an account? <a href="/agentRegister">Register</a>
+    </div>
+    <div>
+      <h3>{{msg}}</h3>
+    </div>
+  </div>
+</body>
+</html>

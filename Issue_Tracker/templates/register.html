@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Registration</title>
+  <h1 style="color: #333;text-align: center">USER registration</h1>
+    <link rel="stylesheet" href="../static/registerStyle.css">
+</head>
+<body>
+  <div class="registration-container">
+    <h2>User Registration</h2>
+    <form action="/register" method="Post">
+      <label >Full Name</label>
+      <input type="text" name="username" placeholder="Enter your full name">
+      
+      <label >Email</label>
+      <input type="email"  name="email" placeholder="Enter your email address">
+      
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password">
+      
+      <button type="submit">Register</button>
+
+        <a href="/login">Have you account? Login Here</a>
+        <h2>{{msg}}</h2>
+    </form>
+  </div>
+</body>
+</html>
