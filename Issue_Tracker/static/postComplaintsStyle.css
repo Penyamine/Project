@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+  .navigation {
+    background-color: #333;
+    padding: 10px;
+  }
+
+  .navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .navigation li {
+    float: left;
+  }
+
+  .navigation li a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  .complaint-form {
+    margin-top: 20px;
+  }
+
+  .complaint-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .complaint-form input[type="file"],
+  .complaint-form textarea,
+  .complaint-form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+
+  .complaint-form select {
+    width: 50%;
+  }
+
+  .complaint-form textarea {
+    height: 100px;
+  }
+
+  .complaint-form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
